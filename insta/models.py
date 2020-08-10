@@ -23,7 +23,8 @@ class Image(models.Model):
 class Likes(models.Model):
     post_likes = models.ForeignKey(Image)
 
-
+class Comments(models.Model):
+    post_comments = models.ForeignKey(Image)
 
 
 

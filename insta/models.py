@@ -20,6 +20,10 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
+class Likes(models.Model):
+    post_likes = models.ForeignKey(Image)
+
+
 
 
 

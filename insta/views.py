@@ -6,8 +6,12 @@ from .forms import ImageForm
 # Create your views here.
 
 def home_page(request):
+    current_user = request.user
+    images = Image.objects.all()
+    profile = Profile.objects.all()
     
-    return render(request, "index.html")
+    return render(request, "index.html",{'images':images})
+
 
 @login_required(login_url='accounts/login')
 def photo_upload(request):

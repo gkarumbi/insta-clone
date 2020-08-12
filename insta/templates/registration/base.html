@@ -6,6 +6,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block styles %}
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="{% static 'css/index.css'%}">
+        <script src="https://kit.fontawesome.com/e513222f1b.js" crossorigin="anonymous"></script>
+    {% endblock %}
 
 
   {%if title%}

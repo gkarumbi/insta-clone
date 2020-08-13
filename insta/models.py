@@ -37,5 +37,5 @@ class Comments(models.Model):
 
 class Profile(models.Model):
     user_name = models.ForeignKey(User,on_delete=models.CASCADE)
-    profile =  models.ImageField(upload_to='profiles/', blank=True, null=True)
+    profile =  models.CharField(max_length= 140,default='A little about me....')
     bio = models.TextField()

@@ -29,11 +29,11 @@ def photo_upload(request):
     return render(request,"photo_upload.html",{"form":form})
 
 @login_required(login_url='accounts/login')
-def create_profile(request,current_user):
+def create_profile(request):
     current_user = request.user
     if request.method == 'POST':
         form = ProfileForm(request.POST)
-        if form.is_valid()
+        if form.is_valid():
             profile = form.save(commit=False)
             profile.save()
 
@@ -46,9 +46,9 @@ def create_profile(request,current_user):
 
 def user_profile(request, username):
     username = request.user
-    profiles =  None
+    profiles = Profile.objects.all()
 
-    return render(request,"profile.html")
+    return render(request,"profile.html", {"profiles":profiles})
 
 @login_required(login_url='/accounts/login')
 def photo_comments(request, photo_id):

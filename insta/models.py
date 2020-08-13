@@ -36,6 +36,6 @@ class Comments(models.Model):
 
 
 class Profile(models.Model):
-    user_name = models.ForeignKey(User,on_delete=models.CASCADE,null=False)
+    #user_name = models.ForeignKey(User,on_delete=models.CASCADE,null=False)
     profile =  models.CharField(max_length= 140,default='A little about me....')
     bio = models.TextField()

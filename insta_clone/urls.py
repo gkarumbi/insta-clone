@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from insta.views import user_profile, photo_upload, home_page
-#from django.contrib.auth import views as  auth_views
+from django.contrib.auth import views 
 from django.contrib.auth import views as auth_views
 
 

@@ -26,6 +26,14 @@ class Image(models.Model):
     def update_caption(self):
         self.save()
 
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ""
+        return url
+
 """ class Likes(models.Model):
     post_likes = models.ForeignKey(Image)
 

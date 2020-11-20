@@ -34,6 +34,14 @@ class Image(models.Model):
             url = ""
         return url
 
+    @property
+    def get_photo_url(self):
+        if self.image and hasattr(self.image, 'url'):
+            return self.image.url
+        else:
+            return "/static/images/user.png"
+
+
 """ class Likes(models.Model):
     post_likes = models.ForeignKey(Image)
 
